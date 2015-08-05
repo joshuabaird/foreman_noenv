@@ -1,6 +1,6 @@
 # foreman_noenv
 
-The ```foreman_noenv``` plugin introduces a new host-level option called 'Agent Specified Environment.'  By default, if the global ```enc_environment``` Foreman setting is set to ```true```, Foreman will explicitly set the puppet environment in the ENC YAML output.  This overrides any local environment setting on the host it's self.  This plugin allows you to disable this functionality and prevent Foreman from specifying the environment in the ENC output on an individual host basis without globally setting ```enc_environment`` to ``false```.
+The ```foreman_noenv``` plugin introduces a new host-level option called 'Agent Specified Environment.'  By default, if the global ```enc_environment``` Foreman setting is set to ```true```, Foreman will explicitly set the puppet environment in the ENC YAML output.  This overrides any local environment setting on the host it's self.  This plugin allows you to disable this functionality and prevent Foreman from specifying the environment in the ENC output on an individual host basis without globally setting ```enc_environment``` to ```false```.
 
 ## Why?
 
