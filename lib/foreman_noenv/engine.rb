@@ -16,25 +16,7 @@ module ForemanNoenv
 
     initializer 'foreman_noenv.register_plugin', after: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_noenv do
-        requires_foreman '>= 1.4'
-
-        # Add permissions
-        security_block :foreman_noenv do
-          permission :view_foreman_noenv, :'foreman_noenv/hosts' => [:new_action]
-        end
-
-        # Add a new role called 'Discovery' if it doesn't exist
-        role 'ForemanNoenv', [:view_foreman_noenv]
-
-        # add menu entry
-        menu :top_menu, :template,
-             url_hash: { controller: :'foreman_noenv/hosts', action: :new_action },
-             caption: 'ForemanNoenv',
-             parent: :hosts_menu,
-             after: :hosts
-
-        # add dashboard widget
-        widget 'foreman_noenv_widget', name: N_('Foreman plugin template widget'), sizex: 4, sizey: 1
+        requires_foreman '>= 1.8'
       end
     end
 
@@ -57,8 +39,6 @@ module ForemanNoenv
     # Include concerns in this config.to_prepare block
     config.to_prepare do
       begin
-        Host::Managed.send(:include, ForemanNoenv::HostExtensions)
-        HostsHelper.send(:include, ForemanNoenv::HostsHelperExtensions)
         Host::Managed.send(:include, ForemanNoenv::HostManagedExtensions)
       rescue => e
         Rails.logger.warn "ForemanNoenv: skipping engine hook (#{e})"
