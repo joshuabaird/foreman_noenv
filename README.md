@@ -1,27 +1,44 @@
-# ForemanNoenv
+# foreman_noenv
 
-*Introdction here*
+The ```foreman_noenv``` plugin introduces a new host-level option called 'Agent Specified Environment.'  By default, if the global ```enc_environment``` Foreman setting is set to ```true```, Foreman will explicitly set the puppet environment in the ENC YAML output.  This overrides any local environment setting on the host it's self.  This plugin allows you to disable this functionality and prevent Foreman from specifying the environment in the ENC output on an individual host basis without globally setting ```enc_environment`` to ``false```.
+
+## Why?
+
+If your Puppet workflow includes dynamic feature based environments (R10k), it's useful to be able to run ```puppet agent -t --environment=featureX``` on a host to test new Puppet code on individual hosts.  With ```enc_environment``` set to ```true```, this is impossible.  One alternative would be to import the new environment(s) into Foreman, and then manually assign the test environment to the host using Foreman, but this is a long process.
+
+Another alternative would be to set ```enc_environment``` to ```false```, but this would stop Foreman from enforcing the environment globally.  Many organizations prefer to have Foreman be authoritative for environment information, so this is not always a good option.
+
+This plugin will allow you to disable this functionality on a per-host basis in Foreman offering greater flexibility and security and allowing the user to run ```puppet agent -t --environment=featureX``` on specific hosts.
 
 ## Installation
 
-See [How_to_Install_a_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
-for how to install Foreman plugins
+Please see the Foreman manual for installation instructions:
+
+* [Foreman:  Plugin Manual: http://theforeman.org/plugins/]
+
+## Configuration
+
+After installing, to enable the plugin, set ```:noenv_enable: true``` in Foreman's ```settings.yml```.
 
 ## Usage
 
-*Usage here*
-
-## TODO
-
-*Todo list here*
+After instalilng and enabling the plugin, a new option named 'Agent Specified Environment' will appear under the 'Additional Information' tab of the host's properties.  Check or uncheck this box based on the desired behavior.
 
 ## Contributing
 
 Fork and send a Pull Request. Thanks!
 
+## Contributors
+
+Thank you to the following people who helped immemseley with the creation of this plugin:
+
+* Stephen Benjamin
+* Dominic Cleal
+* Ohad Levy
+
 ## Copyright
 
-Copyright (c) *year* *your name*
+Copyright (c) 2015 Josh Baird
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
