@@ -14,7 +14,7 @@ This plugin will allow you to disable this functionality on a per-host basis in 
 
 Please see the Foreman manual for installation instructions:
 
-* [Foreman:  Plugin Manual: http://theforeman.org/plugins/]
+* [Foreman:  Plugin Manual:] (http://theforeman.org/plugins/)
 
 ## Configuration
 
