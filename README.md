@@ -30,7 +30,7 @@ Fork and send a Pull Request. Thanks!
 
 ## Contributors
 
-Thank you to the following people who helped immemseley with the creation of this plugin:
+Thank you to the following people who helped immensely with the creation of this plugin:
 
 * Stephen Benjamin
 * Dominic Cleal
