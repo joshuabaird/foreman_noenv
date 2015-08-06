@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.com/joshuabaird/'
   s.summary     = 'Adds the ability to disable environment enforcement per host'
   # also update locale/gemspec.rb
-  s.description = 'The forman_noenv plugin allows a host's Puppet agent to specify a local environment'
+  s.description = 'The forman_noenv plugin allows a hosts Puppet agent to specify a local environment'
 
   s.files = Dir['{app,config,db,lib,locale}/**/*'] + ['LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
