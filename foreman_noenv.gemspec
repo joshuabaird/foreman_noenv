@@ -7,10 +7,10 @@ Gem::Specification.new do |s|
   s.date        = Date.today.to_s
   s.authors     = ['Josh Baird']
   s.email       = ['joshbaird@gmail.com']
-  s.homepage    = 'http://github.com/joshuabaird/'
+  s.homepage    = 'https://github.com/joshuabaird/foreman_noenv'
   s.summary     = 'Adds the ability to disable environment enforcement per host'
   # also update locale/gemspec.rb
-  s.description = 'The forman_noenv plugin allows a hosts Puppet agent to specify a local environment'
+  s.description = 'The foreman_noenv plugin allows a hosts Puppet agent to specify a local environment'
 
   s.files = Dir['{app,config,db,lib,locale}/**/*'] + ['LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['test/**/*']
