@@ -9,7 +9,9 @@ module ForemanNoenv
 
     # Add any db migrations
     initializer 'foreman_noenv.load_app_instance_data' do |app|
-      app.config.paths['db/migrate'] += ForemanNoenv::Engine.paths['db/migrate'].existent
+      ForemanNoenv::Engine.paths['db/migrate'].existent.each do |path|
+        app.config.paths['db/migrate'] << path
+      end
     end
 
     initializer 'foreman_noenv.register_plugin', after: :finisher_hook do |_app|
