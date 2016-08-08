@@ -4,6 +4,7 @@ module ForemanNoenv
 
     included do
       alias_method_chain :info, :env
+			attr_accessible :noenv
     end
 
     def info_with_env
