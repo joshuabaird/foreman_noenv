@@ -17,6 +17,7 @@ module ForemanNoenv
     initializer 'foreman_noenv.register_plugin', after: :finisher_hook do |_app|
       Foreman::Plugin.register :foreman_noenv do
         requires_foreman '>= 1.8'
+	parameter_filter Host::Managed, :noenv
       end
     end
 
