@@ -4,6 +4,7 @@ require 'date'
 Gem::Specification.new do |s|
   s.name        = 'foreman_noenv'
   s.version     = ForemanNoenv::VERSION
+  s.license     = 'GPL-3.0'
   s.date        = Date.today.to_s
   s.authors     = ['Josh Baird']
   s.email       = ['joshbaird@gmail.com']
